@@ -10,6 +10,8 @@
 		B4BE819A20278A0E00B631F5 /* PercentageArc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BE819020278A0E00B631F5 /* PercentageArc.framework */; };
 		B4BE819F20278A0E00B631F5 /* PercentageArcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4BE819E20278A0E00B631F5 /* PercentageArcTests.swift */; };
 		B4BE81A120278A0E00B631F5 /* PercentageArc.h in Headers */ = {isa = PBXBuildFile; fileRef = B4BE819320278A0E00B631F5 /* PercentageArc.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B4E89D4E2027909B00858797 /* PercentageArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E89D4D2027909B00858797 /* PercentageArcView.swift */; };
+		B4E89D5220279BE000858797 /* PercentageArcStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E89D5120279BE000858797 /* PercentageArcStyle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		B4BE819920278A0E00B631F5 /* PercentageArcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PercentageArcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BE819E20278A0E00B631F5 /* PercentageArcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageArcTests.swift; sourceTree = "<group>"; };
 		B4BE81A020278A0E00B631F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B4E89D4D2027909B00858797 /* PercentageArcView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageArcView.swift; sourceTree = "<group>"; };
+		B4E89D5120279BE000858797 /* PercentageArcStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageArcStyle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,8 @@
 		B4BE819220278A0E00B631F5 /* PercentageArc */ = {
 			isa = PBXGroup;
 			children = (
+				B4E89D4C20278F0000858797 /* ui */,
+				B4E89D4B20278EF900858797 /* model */,
 				B4BE819320278A0E00B631F5 /* PercentageArc.h */,
 				B4BE819420278A0E00B631F5 /* Info.plist */,
 			);
@@ -84,6 +90,22 @@
 				B4BE81A020278A0E00B631F5 /* Info.plist */,
 			);
 			path = PercentageArcTests;
+			sourceTree = "<group>";
+		};
+		B4E89D4B20278EF900858797 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B4E89D5120279BE000858797 /* PercentageArcStyle.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		B4E89D4C20278F0000858797 /* ui */ = {
+			isa = PBXGroup;
+			children = (
+				B4E89D4D2027909B00858797 /* PercentageArcView.swift */,
+			);
+			path = ui;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,6 +170,7 @@
 				TargetAttributes = {
 					B4BE818F20278A0E00B631F5 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
 						ProvisioningStyle = Automatic;
 					};
 					B4BE819820278A0E00B631F5 = {
@@ -196,6 +219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E89D5220279BE000858797 /* PercentageArcStyle.swift in Sources */,
+				B4E89D4E2027909B00858797 /* PercentageArcView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +359,7 @@
 		B4BE81A520278A0E00B631F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -342,10 +368,12 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PercentageArc/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hennykat.PercentageArc;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -354,6 +382,7 @@
 		B4BE81A620278A0E00B631F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
@@ -362,6 +391,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PercentageArc/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hennykat.PercentageArc;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
@@ -374,6 +404,7 @@
 		B4BE81A820278A0E00B631F5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PercentageArcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -387,6 +418,7 @@
 		B4BE81A920278A0E00B631F5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = PercentageArcTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
