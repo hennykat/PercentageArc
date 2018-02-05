@@ -22,7 +22,7 @@ Pod::Spec.new do |s|
   s.source       = { :path => '.' }
 
   # ――― Source Code ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
-  s.source_files  = "Classes", "Classes/**/*.{h,m}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "PercentageArc/**/*.{swift}"
+  s.exclude_files = "PercentageArc/Exclude"
 
 end

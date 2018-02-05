@@ -2,15 +2,18 @@ import Foundation
 
 public class PercentageArcStyle: NSObject {
     
-    // colour of percentage arc
-    private let arcColour: UIColor
+    // colour of positive percentage arc
+    public let posColour: UIColor
+    // colour of negative percentage arc
+    public let negColour: UIColor
     // colour of inner circle
-    private let inColour: UIColor
+    public let inColour: UIColor
     // colour of outer edges
-    private let outColour: UIColor
+    public let outColour: UIColor
     
-    public init(arcColour: UIColor, inColour: UIColor, outColour: UIColor) {
-        self.arcColour = arcColour
+    public init(posColour: UIColor, negColour: UIColor, inColour: UIColor, outColour: UIColor) {
+        self.posColour = posColour
+        self.negColour = negColour
         self.inColour = inColour
         self.outColour = outColour
     }
