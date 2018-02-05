@@ -40,10 +40,10 @@ public class PercentageArcView: UIView {
         self.backgroundColor = style.outColour
         
         // setup dimensions
-        // TODO: calculate centre
-        let centre = CGPoint(x: 100, y: 100)
-        let radius: CGFloat = 25
-        let inRadius: CGFloat = 10
+        let centre = PercentageArcUtil.findCentre(rect: rect)
+        let radius = PercentageArcUtil.findRadius(rect: rect)
+        // TODO: calculate inner radius based on user specs
+        let inRadius = radius - 20
         let startAngle: CGFloat = 0
         let fullAngle = CGFloat(Double.pi * 2)
         // TODO: calculate percentage angle
@@ -74,4 +74,5 @@ public class PercentageArcView: UIView {
     private func makeDefaultStyle() -> PercentageArcStyle {
         return PercentageArcStyle(posColour: UIColor.lightGray, negColour: UIColor.darkGray, inColour: UIColor.white, outColour: UIColor.clear)
     }
+
 }
