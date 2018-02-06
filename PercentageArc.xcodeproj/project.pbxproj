@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B4A740B32028ECC0007FC59F /* PercentageArcUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A740B22028ECC0007FC59F /* PercentageArcUtil.swift */; };
 		B4A740B62028EFD4007FC59F /* PercentageArcUtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A740B52028EFD4007FC59F /* PercentageArcUtilTest.swift */; };
+		B4A740B82028FD57007FC59F /* PercentageArcStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A740B72028FD57007FC59F /* PercentageArcStart.swift */; };
 		B4BE819A20278A0E00B631F5 /* PercentageArc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BE819020278A0E00B631F5 /* PercentageArc.framework */; };
 		B4BE81A120278A0E00B631F5 /* PercentageArc.h in Headers */ = {isa = PBXBuildFile; fileRef = B4BE819320278A0E00B631F5 /* PercentageArc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4E89D4E2027909B00858797 /* PercentageArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E89D4D2027909B00858797 /* PercentageArcView.swift */; };
@@ -28,6 +29,7 @@
 /* Begin PBXFileReference section */
 		B4A740B22028ECC0007FC59F /* PercentageArcUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageArcUtil.swift; sourceTree = "<group>"; };
 		B4A740B52028EFD4007FC59F /* PercentageArcUtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageArcUtilTest.swift; sourceTree = "<group>"; };
+		B4A740B72028FD57007FC59F /* PercentageArcStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageArcStart.swift; sourceTree = "<group>"; };
 		B4BE819020278A0E00B631F5 /* PercentageArc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PercentageArc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BE819320278A0E00B631F5 /* PercentageArc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PercentageArc.h; sourceTree = "<group>"; };
 		B4BE819420278A0E00B631F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				B4E89D5120279BE000858797 /* PercentageArcStyle.swift */,
+				B4A740B72028FD57007FC59F /* PercentageArcStart.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -239,6 +242,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B4E89D5220279BE000858797 /* PercentageArcStyle.swift in Sources */,
+				B4A740B82028FD57007FC59F /* PercentageArcStart.swift in Sources */,
 				B4A740B32028ECC0007FC59F /* PercentageArcUtil.swift in Sources */,
 				B4E89D4E2027909B00858797 /* PercentageArcView.swift in Sources */,
 			);

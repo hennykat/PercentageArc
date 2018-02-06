@@ -2,7 +2,7 @@ import Foundation
 
 public class PercentageArcView: UIView {
     
-    private var percentage: Int = 0
+    private var percentage: CGFloat = 0
     private var style: PercentageArcStyle?
     
     // MARK: UIView
@@ -18,7 +18,7 @@ public class PercentageArcView: UIView {
     public override func draw(_ rect: CGRect) {
         
         if style == nil {
-            style = makeDefaultStyle()
+            style = PercentageArcUtil.makeDefaultStyle()
         }
 
         drawPercentage(rect, percentage, style!)
@@ -29,12 +29,12 @@ public class PercentageArcView: UIView {
         self.setNeedsDisplay()
     }
     
-    public func updatePercentage(_ percentage: Int) {
-        self.percentage = percentage
+    public func updatePercentage(_ percentage: CGFloat) {
+        self.percentage = PercentageArcUtil.makeValidPercentage(percentage: percentage)
         self.setNeedsDisplay()
     }
     
-    private func drawPercentage(_ rect: CGRect, _ percentage: Int, _ style: PercentageArcStyle) {
+    private func drawPercentage(_ rect: CGRect, _ percentage: CGFloat, _ style: PercentageArcStyle) {
         
         // colour background
         self.backgroundColor = style.outColour
@@ -44,10 +44,9 @@ public class PercentageArcView: UIView {
         let radius = PercentageArcUtil.findRadius(rect: rect)
         // TODO: calculate inner radius based on user specs
         let inRadius = radius - 20
-        let startAngle: CGFloat = 0
-        let fullAngle = CGFloat(Double.pi * 2)
-        // TODO: calculate percentage angle
-        let percentageAngle = CGFloat(Double.pi)
+        let startAngle = PercentageArcUtil.getStartAngle(start: style.start)
+        let fullAngle = PercentageArcUtil.getFullAngle(startAngle: startAngle)
+        let percentageAngle = PercentageArcUtil.makePercentageAngle(percentage: percentage, start: startAngle)
         
         // create negative arc
         let negPath = UIBezierPath(arcCenter: centre, radius: radius, startAngle: startAngle, endAngle: fullAngle, clockwise: true)
@@ -58,6 +57,7 @@ public class PercentageArcView: UIView {
         
         // create positive arc
         let posPath = UIBezierPath(arcCenter: centre, radius: radius, startAngle: startAngle, endAngle: percentageAngle, clockwise: true)
+        posPath.addLine(to: centre)
         let posLayer = CAShapeLayer()
         posLayer.path = posPath.cgPath
         posLayer.fillColor = style.posColour.cgColor
@@ -69,10 +69,6 @@ public class PercentageArcView: UIView {
         inLayer.path = inPath.cgPath
         inLayer.fillColor = style.inColour.cgColor
         self.layer.addSublayer(inLayer)
-    }
-    
-    private func makeDefaultStyle() -> PercentageArcStyle {
-        return PercentageArcStyle(posColour: UIColor.lightGray, negColour: UIColor.darkGray, inColour: UIColor.white, outColour: UIColor.clear)
     }
 
 }
