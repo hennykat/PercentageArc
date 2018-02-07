@@ -69,6 +69,21 @@ class PercentageArcUtilTest: XCTestCase {
         XCTAssertEqual(result, 0.25, "input: 0.5 x 3 rect")
     }
     
+    func test1FindInnerRadius() {
+        let result = PercentageArcUtil.findInnerRadius(radius: 20.0, thickness: 0.5)
+        XCTAssertEqual(result, 10, "input: half")
+    }
+    
+    func test2FindInnerRadius() {
+        let result = PercentageArcUtil.findInnerRadius(radius: 10.0, thickness: 0.0)
+        XCTAssertEqual(result, 10, "input: none")
+    }
+    
+    func test3FindInnerRadius() {
+        let result = PercentageArcUtil.findInnerRadius(radius: 30.0, thickness: 1.0)
+        XCTAssertEqual(result, 0, "input: whole")
+    }
+    
     func test1GetStartAngle() {
         let result = PercentageArcUtil.getStartAngle(start: .top)
         XCTAssertEqual(result, CGFloat.pi * 3 / 2, "input: top")
