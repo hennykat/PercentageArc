@@ -11,28 +11,28 @@ class PercentageArcUtilTest: XCTestCase {
         super.tearDown()
     }
     
-    func test1MakeValidPercentage() {
-        let actual = PercentageArcUtil.makeValidPercentage(percentage: 0.5)
+    func test1MakeInRange() {
+        let actual = PercentageArcUtil.makeInRange(value: 0.5)
         XCTAssertEqual(actual, 0.5, "input: valid")
     }
     
-    func test2MakeValidPercentage() {
-        let actual = PercentageArcUtil.makeValidPercentage(percentage: 0)
+    func test2MakeInRange() {
+        let actual = PercentageArcUtil.makeInRange(value: 0)
         XCTAssertEqual(actual, 0, "input: valid")
     }
     
-    func test3MakeValidPercentage() {
-        let actual = PercentageArcUtil.makeValidPercentage(percentage: 1)
+    func test3MakeInRange() {
+        let actual = PercentageArcUtil.makeInRange(value: 1)
         XCTAssertEqual(actual, 1, "input: valid")
     }
     
-    func test4MakeValidPercentage() {
-        let actual = PercentageArcUtil.makeValidPercentage(percentage: -0.5)
+    func test4MakeInRange() {
+        let actual = PercentageArcUtil.makeInRange(value: -0.5)
         XCTAssertEqual(actual, 0, "input: invalid")
     }
     
-    func test5MakeValidPercentage() {
-        let actual = PercentageArcUtil.makeValidPercentage(percentage: 2)
+    func test5MakeInRange() {
+        let actual = PercentageArcUtil.makeInRange(value: 2)
         XCTAssertEqual(actual, 0, "input: invalid")
     }
     

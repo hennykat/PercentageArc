@@ -2,8 +2,9 @@ import Foundation
 
 public class PercentageArcView: UIView {
     
-    private var percentage: CGFloat = 0
     private var style: PercentageArcStyle?
+    // range for percentage = [0, 1]
+    private var percentage: CGFloat = 0
     
     // MARK: UIView
     
@@ -30,7 +31,7 @@ public class PercentageArcView: UIView {
     }
     
     public func updatePercentage(_ percentage: CGFloat) {
-        self.percentage = PercentageArcUtil.makeValidPercentage(percentage: percentage)
+        self.percentage = PercentageArcUtil.makeInRange(value: percentage)
         self.setNeedsDisplay()
     }
     
@@ -42,8 +43,7 @@ public class PercentageArcView: UIView {
         // setup dimensions
         let centre = PercentageArcUtil.findCentre(rect: rect)
         let radius = PercentageArcUtil.findRadius(rect: rect)
-        // TODO: calculate inner radius based on user specs
-        let inRadius = radius - 20
+        let inRadius = PercentageArcUtil.findInnerRadius(radius: radius, thickness: style.thickness)
         let startAngle = PercentageArcUtil.getStartAngle(start: style.start)
         let fullAngle = PercentageArcUtil.getFullAngle(startAngle: startAngle)
         let percentageAngle = PercentageArcUtil.makePercentageAngle(percentage: percentage, start: startAngle)
@@ -62,6 +62,11 @@ public class PercentageArcView: UIView {
         posLayer.path = posPath.cgPath
         posLayer.fillColor = style.posColour.cgColor
         self.layer.addSublayer(posLayer)
+        
+        if inRadius == 0 {
+            // no need for inner circle
+            return;
+        }
         
         // create inner circle
         let inPath = UIBezierPath(arcCenter: centre, radius: inRadius, startAngle: startAngle, endAngle: fullAngle, clockwise: true)

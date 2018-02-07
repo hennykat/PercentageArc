@@ -2,20 +2,21 @@ import Foundation
 
 public class PercentageArcUtil {
     
+    // arc start consts
     static let top: CGFloat = CGFloat.pi * 3 / 2
     static let right: CGFloat = 0
     static let bottom: CGFloat = CGFloat.pi / 2
     static let left: CGFloat = CGFloat.pi
-    
+    // angle of full arc
     static let full: CGFloat = CGFloat.pi * 2
     
-    static func makeValidPercentage(percentage: CGFloat) -> CGFloat {
+    static func makeInRange(value: CGFloat) -> CGFloat {
         
-        if percentage < 0 || percentage > 1 {
-            print("Invalid percentage input.  Must be in range [0, 1].")
+        if value < 0 || value > 1 {
+            print("Invalid input: \(value).  Must be in range [0, 1].")
             return 0
         } else {
-            return percentage
+            return value
         }
     }
     
@@ -34,6 +35,11 @@ public class PercentageArcUtil {
         // find smallest side centre
         let minSide = min(rect.width, rect.height)
         return minSide / 2
+    }
+    
+    static func findInnerRadius(radius: CGFloat, thickness: CGFloat) -> CGFloat {
+        let thickVal = makeInRange(value: thickness)
+        return radius * (1 - thickVal)
     }
     
     static func getStartAngle(start: PercentageArcStart) -> CGFloat {
