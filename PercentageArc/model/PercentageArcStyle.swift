@@ -1,6 +1,6 @@
 import Foundation
 
-public class PercentageArcStyle: NSObject {
+public class PercentageArcStyle {
     
     // colour of positive percentage arc
     public let posColour: UIColor
