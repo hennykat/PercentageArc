@@ -1,5 +1,7 @@
 # PercentageArc
 
+![Percentage Arc samples](img/percentageArg.png)
+
 ### What is it?
 
 Cocoa Touch Framework to create a custom arc (or a sector) representing a percentage.
