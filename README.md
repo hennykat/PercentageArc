@@ -1,6 +1,8 @@
 # PercentageArc
 
-![Percentage Arc samples](img/percentageArg.png)
+<p align="center">
+  <img src="./img/percentageArc.png" width="200"/>
+</p>
 
 ### What is it?
 
