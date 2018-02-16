@@ -27,6 +27,7 @@ public class PercentageArcView: UIView {
     
     public func updateStyle(_ style: PercentageArcStyle) {
         self.style = style
+        self.backgroundColor = style.outColour
         self.setNeedsDisplay()
     }
     
@@ -36,9 +37,6 @@ public class PercentageArcView: UIView {
     }
     
     private func drawPercentage(_ rect: CGRect, _ percentage: CGFloat, _ style: PercentageArcStyle) {
-        
-        // colour background
-        self.backgroundColor = style.outColour
         
         // setup dimensions
         let centre = PercentageArcUtil.findCentre(rect: rect)
