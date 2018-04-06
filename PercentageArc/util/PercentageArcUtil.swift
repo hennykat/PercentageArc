@@ -66,7 +66,7 @@ public class PercentageArcUtil {
         return start + angle
     }
     
-    static func makeDefaultStyle() -> PercentageArcStyle {
+    public static func makeDefaultStyle() -> PercentageArcStyle {
         return PercentageArcStyle(posColour: UIColor.lightGray, negColour: UIColor.darkGray, inColour: UIColor.white, outColour: UIColor.clear)
     }
 }

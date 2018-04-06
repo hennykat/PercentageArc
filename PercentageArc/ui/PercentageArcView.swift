@@ -2,14 +2,18 @@ import Foundation
 
 public class PercentageArcView: UIView {
     
-    private var style: PercentageArcStyle?
+    private var style: PercentageArcStyle = PercentageArcUtil.makeDefaultStyle()
     // range for percentage = [0, 1]
     private var percentage: CGFloat = 0
     
     // MARK: UIView
     
-    public override init(frame: CGRect) {
+    public init(frame: CGRect, style: PercentageArcStyle = PercentageArcUtil.makeDefaultStyle(), percentage: CGFloat = 0) {
         super.init(frame: frame)
+        
+        self.style = style
+        self.percentage = percentage
+        self.backgroundColor = style.outColour
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -17,12 +21,7 @@ public class PercentageArcView: UIView {
     }
     
     public override func draw(_ rect: CGRect) {
-        
-        if style == nil {
-            style = PercentageArcUtil.makeDefaultStyle()
-        }
-
-        drawPercentage(rect, percentage, style!)
+        drawPercentage(rect, percentage, style)
     }
     
     public func updateStyle(_ style: PercentageArcStyle) {
