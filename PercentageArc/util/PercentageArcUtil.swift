@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 public class PercentageArcUtil {
     
@@ -11,7 +11,6 @@ public class PercentageArcUtil {
     static let full: CGFloat = CGFloat.pi * 2
     
     static func makeInRange(value: CGFloat) -> CGFloat {
-        
         if value < 0 || value > 1 {
             print("Invalid input: \(value).  Must be in range [0, 1].")
             return 0
@@ -21,7 +20,6 @@ public class PercentageArcUtil {
     }
     
     static func findCentre(rect: CGRect) -> CGPoint {
-        
         // centre in boundary
         let x = rect.width / 2
         let y = rect.height / 2
@@ -31,7 +29,6 @@ public class PercentageArcUtil {
     }
     
     static func findRadius(rect: CGRect) -> CGFloat {
-        
         // find smallest side centre
         let minSide = min(rect.width, rect.height)
         return minSide / 2
@@ -43,8 +40,7 @@ public class PercentageArcUtil {
     }
     
     static func getStartAngle(start: PercentageArcStart) -> CGFloat {
-        
-        switch(start) {
+        switch start {
         case .top:
             return top
         case .right:
@@ -67,6 +63,11 @@ public class PercentageArcUtil {
     }
     
     public static func makeDefaultStyle() -> PercentageArcStyle {
-        return PercentageArcStyle(posColour: UIColor.lightGray, negColour: UIColor.darkGray, inColour: UIColor.white, outColour: UIColor.clear)
+        return PercentageArcStyle(
+            positiveColour: UIColor.lightGray,
+            negativeColour: UIColor.darkGray,
+            innerColour: UIColor.white,
+            outerColour: UIColor.clear
+        )
     }
 }

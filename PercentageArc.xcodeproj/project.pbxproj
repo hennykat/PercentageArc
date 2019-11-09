@@ -11,7 +11,6 @@
 		B4A740B62028EFD4007FC59F /* PercentageArcUtilTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A740B52028EFD4007FC59F /* PercentageArcUtilTest.swift */; };
 		B4A740B82028FD57007FC59F /* PercentageArcStart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4A740B72028FD57007FC59F /* PercentageArcStart.swift */; };
 		B4BE819A20278A0E00B631F5 /* PercentageArc.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B4BE819020278A0E00B631F5 /* PercentageArc.framework */; };
-		B4BE81A120278A0E00B631F5 /* PercentageArc.h in Headers */ = {isa = PBXBuildFile; fileRef = B4BE819320278A0E00B631F5 /* PercentageArc.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B4E89D4E2027909B00858797 /* PercentageArcView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E89D4D2027909B00858797 /* PercentageArcView.swift */; };
 		B4E89D5220279BE000858797 /* PercentageArcStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E89D5120279BE000858797 /* PercentageArcStyle.swift */; };
 /* End PBXBuildFile section */
@@ -31,7 +30,6 @@
 		B4A740B52028EFD4007FC59F /* PercentageArcUtilTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageArcUtilTest.swift; sourceTree = "<group>"; };
 		B4A740B72028FD57007FC59F /* PercentageArcStart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PercentageArcStart.swift; sourceTree = "<group>"; };
 		B4BE819020278A0E00B631F5 /* PercentageArc.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PercentageArc.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B4BE819320278A0E00B631F5 /* PercentageArc.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PercentageArc.h; sourceTree = "<group>"; };
 		B4BE819420278A0E00B631F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B4BE819920278A0E00B631F5 /* PercentageArcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PercentageArcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4BE81A020278A0E00B631F5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,7 +96,6 @@
 				B4A740B12028ECB0007FC59F /* util */,
 				B4E89D4C20278F0000858797 /* ui */,
 				B4E89D4B20278EF900858797 /* model */,
-				B4BE819320278A0E00B631F5 /* PercentageArc.h */,
 				B4BE819420278A0E00B631F5 /* Info.plist */,
 			);
 			path = PercentageArc;
@@ -137,7 +134,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B4BE81A120278A0E00B631F5 /* PercentageArc.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -187,16 +183,17 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 1120;
 				ORGANIZATIONNAME = hennykat;
 				TargetAttributes = {
 					B4BE818F20278A0E00B631F5 = {
 						CreatedOnToolsVersion = 9.2;
-						LastSwiftMigration = 0920;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
 					B4BE819820278A0E00B631F5 = {
 						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 1120;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -281,6 +278,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -288,6 +286,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -316,7 +315,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -341,6 +340,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -348,6 +348,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -370,7 +371,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -398,7 +399,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -420,7 +421,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hennykat.PercentageArc;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -434,7 +435,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hennykat.PercentageArcTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -448,7 +449,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hennykat.PercentageArcTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

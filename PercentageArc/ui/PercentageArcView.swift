@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 public class PercentageArcView: UIView {
     
@@ -8,12 +8,14 @@ public class PercentageArcView: UIView {
     
     // MARK: UIView
     
-    public init(frame: CGRect, style: PercentageArcStyle = PercentageArcUtil.makeDefaultStyle(), percentage: CGFloat = 0) {
-        super.init(frame: frame)
+    public init(frame: CGRect,
+                style: PercentageArcStyle = PercentageArcUtil.makeDefaultStyle(),
+                percentage: CGFloat = 0) {
         
+        super.init(frame: frame)
         self.style = style
         self.percentage = percentage
-        self.backgroundColor = style.outColour
+        self.backgroundColor = style.outerColour
     }
     
     public required init?(coder aDecoder: NSCoder) {
@@ -26,39 +28,60 @@ public class PercentageArcView: UIView {
     
     public func updateStyle(_ style: PercentageArcStyle) {
         self.style = style
-        self.backgroundColor = style.outColour
-        self.setNeedsDisplay()
+        backgroundColor = style.outerColour
+        setNeedsDisplay()
     }
     
     public func updatePercentage(_ percentage: CGFloat) {
         self.percentage = PercentageArcUtil.makeInRange(value: percentage)
-        self.setNeedsDisplay()
+        setNeedsDisplay()
     }
     
-    private func drawPercentage(_ rect: CGRect, _ percentage: CGFloat, _ style: PercentageArcStyle) {
+    private func drawPercentage(
+        _ rect: CGRect,
+        _ percentage: CGFloat,
+        _ style: PercentageArcStyle) {
         
         // setup dimensions
         let centre = PercentageArcUtil.findCentre(rect: rect)
         let radius = PercentageArcUtil.findRadius(rect: rect)
-        let inRadius = PercentageArcUtil.findInnerRadius(radius: radius, thickness: style.thickness)
+        let inRadius = PercentageArcUtil.findInnerRadius(
+            radius: radius,
+            thickness: style.thickness
+        )
         let startAngle = PercentageArcUtil.getStartAngle(start: style.start)
         let fullAngle = PercentageArcUtil.getFullAngle(startAngle: startAngle)
-        let percentageAngle = PercentageArcUtil.makePercentageAngle(percentage: percentage, start: startAngle)
+        let percentageAngle = PercentageArcUtil.makePercentageAngle(
+            percentage: percentage,
+            start: startAngle
+        )
         
         // create negative arc
-        let negPath = UIBezierPath(arcCenter: centre, radius: radius, startAngle: startAngle, endAngle: fullAngle, clockwise: true)
+        let negPath = UIBezierPath(
+            arcCenter: centre,
+            radius: radius,
+            startAngle: startAngle,
+            endAngle: fullAngle,
+            clockwise: true
+        )
         let negLayer = CAShapeLayer()
         negLayer.path = negPath.cgPath
-        negLayer.fillColor = style.negColour.cgColor
-        self.layer.addSublayer(negLayer)
+        negLayer.fillColor = style.negativeColour.cgColor
+        layer.addSublayer(negLayer)
         
         // create positive arc
-        let posPath = UIBezierPath(arcCenter: centre, radius: radius, startAngle: startAngle, endAngle: percentageAngle, clockwise: true)
+        let posPath = UIBezierPath(
+            arcCenter: centre,
+            radius: radius,
+            startAngle: startAngle,
+            endAngle: percentageAngle,
+            clockwise: true
+        )
         posPath.addLine(to: centre)
         let posLayer = CAShapeLayer()
         posLayer.path = posPath.cgPath
-        posLayer.fillColor = style.posColour.cgColor
-        self.layer.addSublayer(posLayer)
+        posLayer.fillColor = style.positiveColour.cgColor
+        layer.addSublayer(posLayer)
         
         if inRadius == 0 {
             // no need for inner circle
@@ -66,11 +89,17 @@ public class PercentageArcView: UIView {
         }
         
         // create inner circle
-        let inPath = UIBezierPath(arcCenter: centre, radius: inRadius, startAngle: startAngle, endAngle: fullAngle, clockwise: true)
+        let inPath = UIBezierPath(
+            arcCenter: centre,
+            radius: inRadius,
+            startAngle: startAngle,
+            endAngle: fullAngle,
+            clockwise: true
+        )
         let inLayer = CAShapeLayer()
         inLayer.path = inPath.cgPath
-        inLayer.fillColor = style.inColour.cgColor
-        self.layer.addSublayer(inLayer)
+        inLayer.fillColor = style.innerColour.cgColor
+        layer.addSublayer(inLayer)
     }
 
 }

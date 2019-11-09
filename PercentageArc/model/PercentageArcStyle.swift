@@ -1,25 +1,32 @@
-import Foundation
+import UIKit
 
+/// Defines styling for the percentage arc
 public class PercentageArcStyle {
     
-    // colour of positive percentage arc
-    public let posColour: UIColor
-    // colour of negative percentage arc
-    public let negColour: UIColor
-    // colour of inner circle
-    public let inColour: UIColor
-    // colour of outer edges
-    public let outColour: UIColor
-    // where the arc will start
+    /// colour of positive percentage arc
+    public let positiveColour: UIColor
+    /// colour of negative percentage arc
+    public let negativeColour: UIColor
+    /// colour of inner circle
+    public let innerColour: UIColor
+    /// colour of outer edges
+    public let outerColour: UIColor
+    /// where the arc will start
     public let start: PercentageArcStart
-    // how thick the arc will be in relation to available space, range [0, 1]
+    /// how thick the arc will be in relation to available space, range [0, 1]
     public let thickness: CGFloat
     
-    public init(posColour: UIColor, negColour: UIColor, inColour: UIColor, outColour: UIColor, start: PercentageArcStart = .right, thickness: CGFloat = 0.33) {
-        self.posColour = posColour
-        self.negColour = negColour
-        self.inColour = inColour
-        self.outColour = outColour
+    public init(positiveColour: UIColor,
+                negativeColour: UIColor,
+                innerColour: UIColor,
+                outerColour: UIColor,
+                start: PercentageArcStart = .right,
+                thickness: CGFloat = 0.33) {
+        
+        self.positiveColour = positiveColour
+        self.negativeColour = negativeColour
+        self.innerColour = innerColour
+        self.outerColour = outerColour
         self.start = start
         self.thickness = thickness
     }
